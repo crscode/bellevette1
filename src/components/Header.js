@@ -1,171 +1,51 @@
-import React, { Component, Fragment } from 'react';
-import { Link, animateScroll as scroll } from "react-scroll";
-
-
-class Header extends Component {
-
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			isSticky: false,
-			isOpenSidebar: false,
-		}
-
-		this.openSidebar = this.openSidebar.bind(this);
-		this.onHandleClickLink = this.onHandleClickLink.bind(this);
-	}
-
-	componentDidMount() {
-		window.addEventListener("scroll", this.handleScroll);
-		document.addEventListener('click', this.handleClickDocument);
-	}
-
-	componentWillUnmount() {
- 		window.removeEventListener("scroll", this.handleScroll);
- 		document.removeEventListener('click', this.handleClickDocument);
-	}
-
-
-	openSidebar() {
-		this.setState({ isOpenSidebar: true})
-	}
-
-	onHandleClickLink() {
-		this.setState({ isOpenSidebar: false})
-	}
-
-
-	handleScroll = (e) => {
-	   if (window.scrollY > 10) {
-	      this.setState({isSticky: true })
-	    } else {
-	      this.setState({isSticky: false })
-	    }	
-	}
-
-	handleClickDocument = (e) => {
-		const { isOpenSidebar } = this.state;
-		if (e.target.classList.contains("site-nav-backdrop") ) {
-			this.setState({ isOpenSidebar: false })
-		}
-	
-	}
-
+import React, { Component } from 'react';
+export default class Header extends Component {
   render() {
+    let resumeData = this.props.resumeData;
+    return (
+      <React.Fragment>
+      
+      <header id="home">
+         <nav id="nav-wrap">
+            <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+          <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+            <ul id="nav" className="nav">
+               <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
+               <li><a className="smoothscroll" href="#about">About</a></li>
+             <li><a className="smoothscroll" href="#resume">Resume</a></li>
+               <li><a className="smoothscroll" href="#portfolio">Works</a></li>
+               <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
+               <li><a className="smoothscroll" href="#contact">Contact</a></li>
+            </ul>
+         </nav>
 
-  const { isSticky, isOpenSidebar } = this.state;
-  const data = this.props.portfolioData;
+         <div className="row banner">
+            <div className="banner-text">
+               <h1 className="responsive-headline">I am {resumeData.name}.</h1>
+               <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I am a {resumeData.role}.{resumeData.roleDescription}
+               </h3>
+               <hr/>
+               <ul className="social">
+                  {
+                    resumeData.socialLinks && resumeData.socialLinks.map(item =>{
+                      return(
+                              <li key={item.name}>
+                                <a href={item.url} target="_blank"><i className={item.className}></i></a>
+                              </li>
+                            )
+                          }
+                    )
+                  }
+               </ul>
+            </div>
+         </div>
 
+         <p className="scrolldown">
+            <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
+         </p>
 
-	return(
-		  <header className={`site-header ${isSticky ? 'site-header--sticky': ''} `}>
-		    <div className="site-header__wrapper">
-		      <div className="site-header__brand">
-		          <Link 
-		         	className="site-header__link"
-				    activeClass="site-nav__link--active"
-				    to="home"
-				    href="#home"
-				    spy={true}
-				    smooth={true}
-				    offset={0}
-				    duration= {500}		          
-		          > 		        
-		        <img 
-		        	src={ isSticky ? data.logo : data.logoWhite } 
-		        	alt="" 
-		        	className="site-header__logo"
-		         />
-		         </Link>
-		      </div> 
-		      <div className="site-header__spacer"></div>
-		      <button type="button" className="site-header__btn-mobile" onClick={ this.openSidebar }>
-		      <svg xmlns="http://www.w3.org/2000/svg" width="18.338" height="12" viewBox="0 0 18.338 12" className={`site-header__burger-icon ${isSticky ? 'site-header__burger-icon--dark' : ''}`}>
-		      <g id="Group_6148" data-name="Group 6148" transform="translate(-288 -20)">
-		        <rect id="Rectangle_2400" data-name="Rectangle 2400" width="18.338" height="2" rx="1" transform="translate(288 20)" fill="#fff"></rect>
-		        <rect id="Rectangle_2401" data-name="Rectangle 2401" width="14.94" height="2" rx="1" transform="translate(288 25)" fill="#fff"></rect>
-		        <rect id="Rectangle_2402" data-name="Rectangle 2402" width="18.338" height="2" rx="1" transform="translate(288 30)" fill="#fff"></rect>
-		      </g>
-		    </svg>
-   			 </button>
-   			 { isOpenSidebar &&  <Fragment> <div className="site-nav-backdrop"></div> </Fragment> }
-			  <div className={ `site-sidebar ${isOpenSidebar ? 'is-open' : ''}` }></div> 
-   			 
-		      <ul className={ `site-nav site-sidebar  ${isOpenSidebar ? 'is-open' : ''}` } >
-		        <li className="site-nav__list">
-		          <Link 
-		            onClick={ this.onHandleClickLink }
-		         	className="site-nav__link"
-				    activeClass="site-nav__link--active"
-				    to="project"
-				    href="#project"
-				    spy={true}
-				    smooth={true}
-				    offset={-20}
-				    duration= {500}		          
-		          > 
-		          Projects 
-		          </Link>
-		        </li>
-		        <li className="site-nav__list">
-		          <Link 
-		          	onClick={ this.onHandleClickLink }
-		          	href="#skills" 
-		         	className="site-nav__link"
-				    activeClass="site-nav__link--active"
-				    to="skills"
-				    href="#skills"
-				    spy={true}
-				    smooth={true}
-				    offset={-30}
-				    duration= {500}			          
-		          	className="site-nav__link"
-		          > 
-		          	Skills  
-		          </Link>
-		        </li>
-		        <li className="site-nav__list">
-		          <Link 
-		          	onClick={ this.onHandleClickLink }
-		          	href="#work" 
-		         	className="site-nav__link"
-				    activeClass="site-nav__link--active"
-				    to="work"
-				    href="#work"
-				    spy={true}
-				    smooth={true}
-				    offset={-30}
-				    duration= {500}			          
-		          	className="site-nav__link"
-		          > 
-		          	Works  
-		          </Link>
-		        </li>          
-		        <li className="site-nav__list">
-		          <Link 
-		          	onClick={ this.onHandleClickLink }
-		          	href="#contact" 
-		         	className="site-nav__link"
-				    activeClass="site-nav__link--active"
-				    to="contact"
-				    href="#contact"
-				    spy={true}
-				    smooth={true}
-				    offset={-30}
-				    duration= {500}			          
-		          	className="site-nav__link"
-		          > 
-		          	Contact  
-		          </Link>
-		        </li>                         
-		      </ul>      
-		    </div>
-		  </header>		  
-		)
-	}
+      </header>
+      </React.Fragment>
+    );
+  }
 }
-
-
-
-export default Header;
