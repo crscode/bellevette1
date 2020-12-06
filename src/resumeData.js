@@ -1,32 +1,32 @@
 let resumeData = {
   "imagebaseurl":"https://crscode.github.io/",
-  "name": "Christopher R. Smith",
-  "role": "Full Stack Developer and a Mathematician",
+  "name": "",
+  "role": "",
   "imgurl":"crscode",
   "skypeid": "Your skypeid",
   "roleDescription": "",
-  "socialLinks":[
-      {
-        "name":"google",
-        "url":"https://www.linkedin.com/in/crscode/",
-        "className":"fa fa-google-plus"
-      },
-      {
-        "name":"linkedin",
-        "url":"https://www.linkedin.com/in/crscode/",
-        "className":"fa fa-linkedin"
-      },
-      {
-        "name":"github",
-        "url":"https://github.com/crscode",
-        "className":"fa fa-github"
-      },
-      {
-        "name":"twitter",
-        "url":"http://twitter.com/crscode",
-        "className":"fa fa-twitter"
-      }
-    ],
+  // "socialLinks":[
+  //     {
+  //       "name":"google",
+  //       "url":"https://www.linkedin.com/in/crscode/",
+  //       "className":"fa fa-google-plus"
+  //     },
+  //     {
+  //       "name":"linkedin",
+  //       "url":"https://www.linkedin.com/in/crscode/",
+  //       "className":"fa fa-linkedin"
+  //     },
+  //     {
+  //       "name":"github",
+  //       "url":"https://github.com/crscode",
+  //       "className":"fa fa-github"
+  //     },
+  //     {
+  //       "name":"twitter",
+  //       "url":"http://twitter.com/crscode",
+  //       "className":"fa fa-twitter"
+  //     }
+  //   ],
   "aboutme":"Christopher R. Smith, Experienced in explaining and demonstrating new products and concepts. Highly skilled in rapidly developing rapport. Analytical and organized with the demonstrated ability to identify needs, makes recommendations, and implement effective solutions. Extremely adaptable and able to grasp and apply new information. A team player, I am highly organized and able to coordinate multiple projects simultaneously. Innovative optimized solution seeker. Excited to be at the deployment phase of my career as a web developer. I am ambitious, adventurous, assiduous, animated, and an alliteration advocate.",
   "address":"Atlanta, GA.",
   "website":"",
@@ -76,24 +76,24 @@ let resumeData = {
   ],
   "portfolio":[
     {
-      "name":"Mother Trucker",
-      "description":"Mother Trucker is an application using Sequelize, Node, Express, Express-Handlebars, and Socket.io while incorporating Mapquest, that allow users to find local Food Truck in their area and allows Food Truck owners to post/update/delete their Food Truck post..",
-      "imgurl":"images/mothertruckers.gif"
+      "name":"Lash Extensions",
+      "description":"",
+      "imgurl":"images/image1.jpg"
     },
     {
-      "name":"Work Day Scheduler",
-      "description":"Mother Trucker is an application using Sequelize, Node, Express, Express-Handlebars, and Socket.io while incorporating Mapquest, that allow users to find local Food Truck in their area and allows Food Truck owners to post/update/delete their Food Truck post..",
-      "imgurl":"images/workday.gif"
+      "name":"Lash Extensions",
+      "description":"",
+      "imgurl":"images/image2.jpg"
     },
     {
-      "name":"My Budget Tracker",
-      "description":"Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.",  
-      "imgurl":"images/mybudgettracker.gif"
+      "name":"Classic",
+      "description":"",  
+      "imgurl":"images/image3.jpg"
     },
     {
-      "name":"The Classic Genius",
-      "description":"A research app to help users collect scholar research articles from all over the world, and give user an option to enhance their study with classical music. Moreover, if the user enjoy what they are hearing, there are links to lead user to a music library with more information on the artist and song playing.",
-      "imgurl":"images/theclassicgenius.gif"
+      "name":"Hybrid",
+      "description":"",
+      "imgurl":"images/image4.jpg"
     }
   ],
   "testimonials":[
