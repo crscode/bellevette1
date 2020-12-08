@@ -27,8 +27,8 @@ let resumeData = {
   //       "className":"fa fa-twitter"
   //     }
   //   ],
-  "aboutme":"Christopher R. Smith, Experienced in explaining and demonstrating new products and concepts. Highly skilled in rapidly developing rapport. Analytical and organized with the demonstrated ability to identify needs, makes recommendations, and implement effective solutions. Extremely adaptable and able to grasp and apply new information. A team player, I am highly organized and able to coordinate multiple projects simultaneously. Innovative optimized solution seeker. Excited to be at the deployment phase of my career as a web developer. I am ambitious, adventurous, assiduous, animated, and an alliteration advocate.",
-  "address":"Atlanta, GA.",
+  "aboutme":"Facials ",
+  "address":"240 Palmetto Ave. Daytona Beach, FL 32114.",
   "website":"",
   "education":[
     {

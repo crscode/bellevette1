@@ -179,7 +179,7 @@ ul#nav li a {
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
+ul#nav li.current a { color: #ff00dd; }
 
 
 /* ------------------------------------------------------------------ */
@@ -187,9 +187,9 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: #2B2B2B;
-   padding-top: 96px;
-   padding-bottom: 66px;
+   background: url(/images/bellevettebackground.jpg) no-repeat top center;
+   padding-top: 30px;
+   padding-bottom: 50px;
    overflow: hidden;
 }
 
@@ -197,13 +197,23 @@ ul#nav li.current a { color: #F06000; }
 #about a:hover, #about a:focus { color: #11ABB0; }
 
 #about h2 {
+   font: 35px 'opensans-bold', sans-serif;
+   color: rgb(251, 55, 153);
+   margin-bottom: 12px;
+}
+#about h3 {
+   font: 22px/30px 'opensans-bold', sans-serif;
+   color: rgb(252, 157, 4);
+   margin-bottom: 12px;
+}
+#about li {
    font: 22px/30px 'opensans-bold', sans-serif;
    color: #fff;
    margin-bottom: 12px;
 }
 #about p {
    line-height: 30px;
-   color: #7A7A7A;
+   color: #facd03;
 }
 #about .profile-pic {
    position: relative;
